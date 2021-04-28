@@ -11,7 +11,7 @@ export default function Home() {
 
     const handleClick = () => {
         navigator.permissions.query({name: "clipboard-write"}).then(result => {
-            if (result.state == "granted" || result.state == "prompt") {
+            if (result.state === "granted" || result.state === "prompt") {
                 navigator.clipboard.writeText(macro).then(function() {
                     /* clipboard successfully set */
                   }, function() {
